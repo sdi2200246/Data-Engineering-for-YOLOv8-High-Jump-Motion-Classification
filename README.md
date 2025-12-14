@@ -368,16 +368,6 @@ Typical augmentations included:
 
 All transformations were chosen to **preserve phase semantics** and avoid altering the meaning of the motion.
 
----
-
-### Design Rationale
-
-By evaluating both non-augmented and augmented dataset versions, we were able to:
-- quantify the effect of augmentation on generalization
-- avoid masking data issues with synthetic variation
-- make informed decisions about dataset composition
-
-This approach reinforces the data-centric philosophy of the project: **improving the dataset itself before increasing model complexity**.
 
 
 
