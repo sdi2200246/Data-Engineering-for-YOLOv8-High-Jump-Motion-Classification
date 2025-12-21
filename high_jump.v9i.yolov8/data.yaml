@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 3
+names: ['jump', 'land', 'run']
+
+roboflow:
+  workspace: jason-lgfjp
+  project: high_jump-ftbna
+  version: 9
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/jason-lgfjp/high_jump-ftbna/dataset/9
