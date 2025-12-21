@@ -20,6 +20,8 @@ Stages:
 
 6.YOLOv8 training + evaluation
 
+7.Model Predictions & Qualitative Validation
+
 
 ## Stage 1 — Data Source Selection
 
@@ -367,6 +369,31 @@ Typical augmentations included:
 - small rotations within realistic bounds
 
 All transformations were chosen to **preserve phase semantics** and avoid altering the meaning of the motion.
+
+
+
+## Stage 7 — Model Predictions & Qualitative Validation
+
+To validate the trained YOLOv8 model, we ran inference on unseen videos and inspected the predicted phase labels over time. Evaluation focused on **qualitative alignment with biomechanically meaningful moments**, rather than only aggregate metrics.
+
+🎥 **Predictions Video:**  
+
+https://github.com/user-attachments/assets/837a8232-9898-46e5-80ea-5e8e8b2184fe
+
+https://github.com/user-attachments/assets/d23fef55-037e-47fd-af97-f8077a19cec9
+
+
+### Key Observations
+
+- **Run → Jump transition** is predicted consistently at the single-leg takeoff plant, not during the final running strides.
+- **Jump phase** remains stable throughout takeoff, flight, peak height, and bar clearance, despite its short temporal duration.
+- **Jump → Land transition** occurs only after full bar clearance, once both feet are visually above the bar.
+- Predictions are temporally stable within each phase, with no rapid oscillations between classes.
+
+### Conclusion
+
+The prediction video provides clear evidence that the model learned **phase semantics tied to critical key moments**, rather than relying on timing heuristics or broadcast artifacts. This confirms that our **phase-aware sampling strategy and explicit labeling rules** successfully captured the most informative moments for high-jump phase classification.
+
 
 
 
